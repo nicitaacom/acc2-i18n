@@ -23,15 +23,18 @@ dependencies:
   eslint-config-next:
     specifier: 13.5.3
     version: 13.5.3(eslint@8.50.0)(typescript@5.2.2)
+  i18next:
+    specifier: ^23.6.0
+    version: 23.6.0
   next:
     specifier: 13.5.3
     version: 13.5.3(react-dom@18.2.0)(react@18.2.0)
   next-i18next:
     specifier: ^14.0.3
-    version: 14.0.3(i18next@23.5.1)(next@13.5.3)(react-i18next@13.2.2)(react@18.2.0)
-  next-intl:
-    specifier: 3.0.0-beta.19
-    version: 3.0.0-beta.19(next@13.5.3)(react@18.2.0)
+    version: 14.0.3(i18next@23.6.0)(next@13.5.3)(react-i18next@13.3.1)(react@18.2.0)
+  next-language-detector:
+    specifier: ^1.0.2
+    version: 1.0.2
   postcss:
     specifier: 8.4.30
     version: 8.4.30
@@ -41,6 +44,9 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  react-i18next:
+    specifier: ^13.3.1
+    version: 13.3.1(i18next@23.6.0)(react-dom@18.2.0)(react@18.2.0)
   tailwindcss:
     specifier: 3.3.3
     version: 3.3.3
@@ -58,6 +64,13 @@ packages:
   /@alloc/quick-lru@5.2.0:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
+    dev: false
+
+  /@babel/runtime@7.16.7:
+    resolution: {integrity: sha512-9E9FJowqAsytyOY6LG+1KuueckRL+aQW+mKvXRXnuFGyRAyepJPmEo9vgMfXUA6O9u3IeEdv9MAkppFcaQwogQ==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.13.11
     dev: false
 
   /@babel/runtime@7.23.1:
@@ -102,59 +115,6 @@ packages:
   /@eslint/js@8.50.0:
     resolution: {integrity: sha512-NCC3zz2+nvYd+Ckfh87rA47zfu2QsQpvc6k1yzTk+b9KzRj0wkGa8LSoGOXN6Zv4lRf/EIoZ80biDh9HOI+RNQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dev: false
-
-  /@formatjs/ecma402-abstract@1.11.4:
-    resolution: {integrity: sha512-EBikYFp2JCdIfGEb5G9dyCkTGDmC57KSHhRQOC3aYxoPWVZvfWCDjZwkGYHN7Lis/fmuWl906bnNTJifDQ3sXw==}
-    dependencies:
-      '@formatjs/intl-localematcher': 0.2.25
-      tslib: 2.6.2
-    dev: false
-
-  /@formatjs/ecma402-abstract@1.17.2:
-    resolution: {integrity: sha512-k2mTh0m+IV1HRdU0xXM617tSQTi53tVR2muvYOsBeYcUgEAyxV1FOC7Qj279th3fBVQ+Dj6muvNJZcHSPNdbKg==}
-    dependencies:
-      '@formatjs/intl-localematcher': 0.4.2
-      tslib: 2.6.2
-    dev: false
-
-  /@formatjs/fast-memoize@1.2.1:
-    resolution: {integrity: sha512-Rg0e76nomkz3vF9IPlKeV+Qynok0r7YZjL6syLz4/urSg0IbjPZCB/iYUMNsYA643gh4mgrX3T7KEIFIxJBQeg==}
-    dependencies:
-      tslib: 2.6.2
-    dev: false
-
-  /@formatjs/icu-messageformat-parser@2.1.0:
-    resolution: {integrity: sha512-Qxv/lmCN6hKpBSss2uQ8IROVnta2r9jd3ymUEIjm2UyIkUCHVcbUVRGL/KS/wv7876edvsPe+hjHVJ4z8YuVaw==}
-    dependencies:
-      '@formatjs/ecma402-abstract': 1.11.4
-      '@formatjs/icu-skeleton-parser': 1.3.6
-      tslib: 2.6.2
-    dev: false
-
-  /@formatjs/icu-skeleton-parser@1.3.6:
-    resolution: {integrity: sha512-I96mOxvml/YLrwU2Txnd4klA7V8fRhb6JG/4hm3VMNmeJo1F03IpV2L3wWt7EweqNLES59SZ4d6hVOPCSf80Bg==}
-    dependencies:
-      '@formatjs/ecma402-abstract': 1.11.4
-      tslib: 2.6.2
-    dev: false
-
-  /@formatjs/intl-localematcher@0.2.25:
-    resolution: {integrity: sha512-YmLcX70BxoSopLFdLr1Ds99NdlTI2oWoLbaUW2M406lxOIPzE1KQhRz2fPUkq34xVZQaihCoU29h0KK7An3bhA==}
-    dependencies:
-      tslib: 2.6.2
-    dev: false
-
-  /@formatjs/intl-localematcher@0.2.32:
-    resolution: {integrity: sha512-k/MEBstff4sttohyEpXxCmC3MqbUn9VvHGlZ8fauLzkbwXmVrEeyzS+4uhrvAk9DWU9/7otYWxyDox4nT/KVLQ==}
-    dependencies:
-      tslib: 2.6.2
-    dev: false
-
-  /@formatjs/intl-localematcher@0.4.2:
-    resolution: {integrity: sha512-BGdtJFmaNJy5An/Zan4OId/yR9Ih1OojFjcduX/xOvq798OgWSyDtd6Qd5jqJXwJs1ipe4Fxu9+cshic5Ox2tA==}
-    dependencies:
-      tslib: 2.6.2
     dev: false
 
   /@humanwhocodes/config-array@0.11.11:
@@ -1482,12 +1442,18 @@ packages:
       void-elements: 3.1.0
     dev: false
 
+  /i18next-browser-languagedetector@6.1.2:
+    resolution: {integrity: sha512-YDzIGHhMRvr7M+c8B3EQUKyiMBhfqox4o1qkFvt4QXuu5V2cxf74+NCr+VEkUuU0y+RwcupA238eeolW1Yn80g==}
+    dependencies:
+      '@babel/runtime': 7.23.1
+    dev: false
+
   /i18next-fs-backend@2.2.0:
     resolution: {integrity: sha512-VOPHhdDX0M/csRqEw+9Ectpf6wvTIg1MZDfAHxc3JKnAlJz7fcZSAKAeyDohOq0xuLx57esYpJopIvBaRb0Bag==}
     dev: false
 
-  /i18next@23.5.1:
-    resolution: {integrity: sha512-JelYzcaCoFDaa+Ysbfz2JsGAKkrHiMG6S61+HLBUEIPaF40WMwW9hCPymlQGrP+wWawKxKPuSuD71WZscCsWHg==}
+  /i18next@23.6.0:
+    resolution: {integrity: sha512-z0Cxr0MGkt+kli306WS4nNNM++9cgt2b2VCMprY92j+AIab/oclgPxdwtTZVLP1zn5t5uo8M6uLsZmYrcjr3HA==}
     dependencies:
       '@babel/runtime': 7.23.1
     dev: false
@@ -1528,15 +1494,6 @@ packages:
       get-intrinsic: 1.2.1
       has: 1.0.3
       side-channel: 1.0.4
-    dev: false
-
-  /intl-messageformat@9.13.0:
-    resolution: {integrity: sha512-7sGC7QnSQGa5LZP7bXLDhVDtQOeKGeBFGHF2Y8LVBwYZoQZCgWeKoPGTa5GMG8g/TzDgeXuYJQis7Ggiw2xTOw==}
-    dependencies:
-      '@formatjs/ecma402-abstract': 1.11.4
-      '@formatjs/fast-memoize': 1.2.1
-      '@formatjs/icu-messageformat-parser': 2.1.0
-      tslib: 2.6.2
     dev: false
 
   /is-array-buffer@3.0.2:
@@ -1870,12 +1827,7 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: false
 
-  /negotiator@0.6.3:
-    resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
-    engines: {node: '>= 0.6'}
-    dev: false
-
-  /next-i18next@14.0.3(i18next@23.5.1)(next@13.5.3)(react-i18next@13.2.2)(react@18.2.0):
+  /next-i18next@14.0.3(i18next@23.6.0)(next@13.5.3)(react-i18next@13.3.1)(react@18.2.0):
     resolution: {integrity: sha512-FtnjRMfhlamk8YyeyWqd+pndNL+3er83iMZnH4M4mhiGA93l0+vtBUvuObgOAMHDJGLLB2SS2xOOZq69oiJh7A==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -1888,25 +1840,18 @@ packages:
       '@types/hoist-non-react-statics': 3.3.2
       core-js: 3.32.2
       hoist-non-react-statics: 3.3.2
-      i18next: 23.5.1
+      i18next: 23.6.0
       i18next-fs-backend: 2.2.0
       next: 13.5.3(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
-      react-i18next: 13.2.2(i18next@23.5.1)(react-dom@18.2.0)(react@18.2.0)
+      react-i18next: 13.3.1(i18next@23.6.0)(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
-  /next-intl@3.0.0-beta.19(next@13.5.3)(react@18.2.0):
-    resolution: {integrity: sha512-F9ZZ342rDUJE3hOD2ZkKtkbeJNNUQtorN0Wnr2gThgLeeyKchbwm5KgijK4gOU66Yw91V1lRuGEcV6BMJdSaxg==}
-    peerDependencies:
-      next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  /next-language-detector@1.0.2:
+    resolution: {integrity: sha512-kw6oMrvSZgT4JW2xay+nOJszKYO0IbBBn209TWwaCD7neBpH/DHZu5tISboKwaOHbrYSptEcUgX+L5Cmx0SJ6g==}
     dependencies:
-      '@formatjs/intl-localematcher': 0.2.32
-      negotiator: 0.6.3
-      next: 13.5.3(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
-      server-only: 0.0.1
-      use-intl: 3.0.0-beta.3(react@18.2.0)
+      '@babel/runtime': 7.16.7
+      i18next-browser-languagedetector: 6.1.2
     dev: false
 
   /next@13.5.3(react-dom@18.2.0)(react@18.2.0):
@@ -2228,8 +2173,8 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-i18next@13.2.2(i18next@23.5.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-+nFUkbRByFwnrfDcYqvzBuaeZb+nACHx+fAWN/pZMddWOCJH5hoc21+Sa/N/Lqi6ne6/9wC/qRGOoQhJa6IkEQ==}
+  /react-i18next@13.3.1(i18next@23.6.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-JAtYREK879JXaN9GdzfBI4yJeo/XyLeXWUsRABvYXiFUakhZJ40l+kaTo+i+A/3cKIED41kS/HAbZ5BzFtq/Og==}
     peerDependencies:
       i18next: '>= 23.2.3'
       react: '>= 16.8.0'
@@ -2243,7 +2188,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.1
       html-parse-stringify: 3.0.1
-      i18next: 23.5.1
+      i18next: 23.6.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -2282,6 +2227,10 @@ packages:
       get-intrinsic: 1.2.1
       globalthis: 1.0.3
       which-builtin-type: 1.1.3
+    dev: false
+
+  /regenerator-runtime@0.13.11:
+    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
     dev: false
 
   /regenerator-runtime@0.14.0:
@@ -2377,10 +2326,6 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
-    dev: false
-
-  /server-only@0.0.1:
-    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
     dev: false
 
   /set-function-name@2.0.1:
@@ -2692,16 +2637,6 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.3.0
-    dev: false
-
-  /use-intl@3.0.0-beta.3(react@18.2.0):
-    resolution: {integrity: sha512-b5c9F6F3Yw7xbdIVdDBj2qh5BHntdr2Obp3c40OTxXOwqDIyjAbOxjezGe7ak8EGo0TEezyN6oPvi6aQWPjDdQ==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@formatjs/ecma402-abstract': 1.17.2
-      intl-messageformat: 9.13.0
-      react: 18.2.0
     dev: false
 
   /util-deprecate@1.0.2:
