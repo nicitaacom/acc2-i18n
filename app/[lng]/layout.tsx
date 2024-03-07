@@ -2,8 +2,6 @@ import './globals.css'
 import { dir } from 'i18next'
 
 import { languages } from '../i18n/settings'
-import Link from "next/link"
-import { Footer } from "./components/Footer"
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }))
